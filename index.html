@@ -1,703 +1,1221 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3rd Shift Custodial Operations - Leadership Recap & Management</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        disney: {
-                            dark: '#0B132B',
-                            navy: '#1C2541',
-                            blue: '#3A506B',
-                            accent: '#48CAE4',
-                            gold: '#FFB703',
-                            purple: '#7209B7',
-                            card: '#1e293b'
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Henry L. Powell | Author, Minister & Speaker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0a0a0c;
+      --bg-card: #141418;
+      --bg-card-hover: #1c1c24;
+      --accent-gold: #d4a373;
+      --accent-gold-light: #faedcd;
+      --accent-gold-glow: rgba(212, 163, 115, 0.25);
+      --amazon-orange: #ff9900;
+      --amazon-dark: #131921;
+      --text-main: #f4f4f6;
+      --text-muted: #a0a0aa;
+      --border-color: rgba(212, 163, 115, 0.2);
+      --font-title: 'Cinzel', serif;
+      --font-serif: 'Playfair Display', serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* HEADER / NAV */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(16px);
+      background: rgba(10, 10, 12, 0.85);
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.1rem 5%;
+    }
+
+    .logo {
+      font-family: var(--font-title);
+      font-size: 1.35rem;
+      letter-spacing: 2px;
+      font-weight: 700;
+      color: var(--accent-gold-light);
+    }
+    .logo span {
+      color: var(--accent-gold);
+    }
+
+    nav {
+      display: flex;
+      gap: 1.8rem;
+      align-items: center;
+    }
+
+    nav a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: var(--accent-gold);
+    }
+
+    .btn-amazon-nav {
+      background: var(--amazon-orange);
+      color: #111;
+      font-weight: 700;
+      padding: 0.55rem 1.25rem;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.25s ease;
+      font-size: 0.88rem;
+    }
+    .btn-amazon-nav:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 18px rgba(255, 153, 0, 0.4);
+    }
+
+    /* HERO SECTION */
+    .hero {
+      position: relative;
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      padding: 4rem 5%;
+      background: radial-gradient(circle at 75% 30%, rgba(212, 163, 115, 0.12) 0%, transparent 60%),
+                  radial-gradient(circle at 10% 80%, rgba(255, 153, 0, 0.08) 0%, transparent 50%);
+    }
+
+    .hero-container {
+      max-width: 1250px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      color: var(--accent-gold);
+      margin-bottom: 1rem;
+      border-bottom: 2px solid var(--accent-gold);
+      padding-bottom: 0.25rem;
+    }
+
+    .hero-title {
+      font-family: var(--font-title);
+      font-size: 3.5rem;
+      line-height: 1.15;
+      margin-bottom: 0.75rem;
+      color: #fff;
+    }
+
+    .hero-subtitle {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      color: var(--accent-gold-light);
+      font-style: italic;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-scripture {
+      border-left: 3px solid var(--accent-gold);
+      padding-left: 1.25rem;
+      margin-bottom: 1.75rem;
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      color: #d1d1d8;
+      line-height: 1.7;
+    }
+    .hero-scripture span {
+      display: block;
+      margin-top: 0.4rem;
+      font-size: 0.85rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      font-family: var(--font-body);
+      font-weight: 600;
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-bottom: 2.5rem;
+      max-width: 580px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #ff9900, #e67e00);
+      color: #000;
+      font-weight: 700;
+      padding: 0.95rem 2rem;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-size: 1rem;
+      box-shadow: 0 4px 20px rgba(255, 153, 0, 0.35);
+      transition: all 0.25s ease;
+    }
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(255, 153, 0, 0.5);
+    }
+
+    .btn-outline {
+      border: 1px solid var(--border-color);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text-main);
+      font-weight: 600;
+      padding: 0.95rem 1.8rem;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-size: 1rem;
+      backdrop-filter: blur(8px);
+      transition: all 0.25s ease;
+    }
+    .btn-outline:hover {
+      background: rgba(212, 163, 115, 0.15);
+      border-color: var(--accent-gold);
+      transform: translateY(-3px);
+    }
+
+    /* HERO BOOK SHOWCASE */
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .book-stage {
+      position: relative;
+      width: 320px;
+      height: 480px;
+      perspective: 1200px;
+    }
+
+    .book-3d {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      border-radius: 8px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 40px var(--accent-gold-glow);
+      transition: transform 0.4s ease;
+      cursor: pointer;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .book-3d:hover {
+      transform: scale(1.02) rotate(-1deg);
+    }
+
+    .book-3d img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* SECTION CONTAINERS */
+    section {
+      padding: 6rem 5%;
+      max-width: 1250px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-tag {
+      font-size: 0.85rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      font-weight: 700;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-family: var(--font-title);
+      font-size: 2.5rem;
+      color: #fff;
+    }
+
+    /* BOOKS GRID */
+    .books-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .book-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s ease;
+    }
+    .book-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--accent-gold);
+      background: var(--bg-card-hover);
+      box-shadow: 0 16px 35px rgba(0,0,0,0.4);
+    }
+
+    .card-cover-container {
+      position: relative;
+      height: 380px;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .card-cover-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .book-card:hover .card-cover-container img {
+      transform: scale(1.04);
+    }
+
+    .crop-right img {
+      object-position: right center;
+    }
+
+    .card-body {
+      padding: 1.8rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .card-meta {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--accent-gold);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-title {
+      font-family: var(--font-title);
+      font-size: 1.6rem;
+      margin-bottom: 0.35rem;
+      color: #fff;
+    }
+
+    .card-subtitle {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      color: var(--accent-gold-light);
+      font-style: italic;
+      margin-bottom: 0.6rem;
+    }
+
+    .card-isbn {
+      font-size: 0.78rem;
+      color: var(--accent-gold);
+      letter-spacing: 1px;
+      margin-bottom: 0.9rem;
+      font-family: monospace;
+    }
+
+    .card-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      line-height: 1.65;
+      flex-grow: 1;
+    }
+
+    .card-actions {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .btn-buy-amazon {
+      flex: 1;
+      background: var(--amazon-orange);
+      color: #111;
+      font-weight: 700;
+      padding: 0.75rem;
+      border-radius: 6px;
+      text-align: center;
+      font-size: 0.92rem;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s ease;
+    }
+    .btn-buy-amazon:hover {
+      background: #ffaa1a;
+      transform: translateY(-2px);
+    }
+
+    .btn-read-sample {
+      border: 1px solid var(--border-color);
+      background: transparent;
+      color: var(--text-main);
+      padding: 0.75rem 1.25rem;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.92rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .btn-read-sample:hover {
+      border-color: var(--accent-gold);
+      background: rgba(212, 163, 115, 0.1);
+    }
+
+    /* HENRY BURGESS / UPCOMING SECTION */
+    .pen-name-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(212, 163, 115, 0.15);
+      border: 1px solid var(--accent-gold);
+      color: var(--accent-gold-light);
+      padding: 0.35rem 0.9rem;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .upcoming-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 2.5rem;
+      margin-top: 2rem;
+    }
+    .upcoming-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    .upcoming-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--accent-gold);
+      background: var(--bg-card-hover);
+      box-shadow: 0 16px 35px rgba(0,0,0,0.4);
+    }
+    .upcoming-stamp {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      background: var(--accent-gold);
+      color: #000;
+      font-weight: 800;
+      font-size: 0.72rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 0.3rem 0.7rem;
+      border-radius: 4px;
+      z-index: 10;
+    }
+    .upcoming-cover-container {
+      position: relative;
+      height: 380px;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+    .upcoming-cover-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .upcoming-card:hover .upcoming-cover-container img {
+      transform: scale(1.04);
+    }
+    .upcoming-body {
+      padding: 1.8rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    /* VIDEO SECTION */
+    .video-section {
+      background: linear-gradient(180deg, var(--bg-dark) 0%, #111116 50%, var(--bg-dark) 100%);
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 4rem 3rem;
+      margin: 4rem auto 0;
+      text-align: center;
+    }
+
+    .video-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.25rem;
+      margin-top: 3rem;
+      text-align: left;
+    }
+
+    .video-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+    .video-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent-gold);
+    }
+    .video-card video {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      background: #000;
+      display: block;
+    }
+    .video-card-body {
+      padding: 1.5rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .video-card-tag {
+      font-size: 0.75rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+    .video-card-title {
+      font-family: var(--font-title);
+      font-size: 1.25rem;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+    .video-card-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    /* ABOUT AUTHOR */
+    .about-container {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .about-image-card {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+      background: #000;
+    }
+    .about-image-card img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .about-text h3 {
+      font-family: var(--font-title);
+      font-size: 2.2rem;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+    .about-text .lead {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      color: var(--accent-gold-light);
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+    .about-text p {
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+      font-size: 1.02rem;
+    }
+
+    /* CONTACT / SPEAKING FORM */
+    .contact-container {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 3.5rem;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--accent-gold-light);
+      margin-bottom: 0.4rem;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      color: #fff;
+      font-family: inherit;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--accent-gold);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border-color);
+      padding: 3rem 5%;
+      text-align: center;
+      background: #070709;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    footer p {
+      margin-bottom: 0.5rem;
+    }
+
+    /* EXCERPT MODAL */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      padding: 2rem;
+    }
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      max-width: 700px;
+      width: 100%;
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 2.5rem;
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+    .modal-close:hover {
+      color: #fff;
+    }
+
+    .modal-book-title {
+      font-family: var(--font-title);
+      font-size: 1.8rem;
+      color: #fff;
+      margin-bottom: 0.25rem;
+    }
+
+    .modal-book-sub {
+      font-family: var(--font-serif);
+      font-style: italic;
+      color: var(--accent-gold);
+      margin-bottom: 1.5rem;
+    }
+
+    .modal-text {
+      color: #d8d8de;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      white-space: pre-line;
+      margin-bottom: 2rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero-scripture {
+        border-left: none;
+        border-top: 2px solid var(--accent-gold);
+        padding: 1rem 0 0 0;
+      }
+      .hero-buttons {
+        justify-content: center;
+      }
+      .about-container {
+        grid-template-columns: 1fr;
+      }
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  <!-- Google Analytics Tracking (Replace G-C3T37T8T6V with your actual GA4 Measurement ID) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C3T37T8T6V"></script>
+  <script>
+    window.dataLayer = window.dataLayer || function(){dataLayer.push(arguments);};
+    gtag('js', new Date());
+    gtag('config', 'G-C3T37T8T6V');
+  </script>
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen font-sans antialiased">
+<body>
 
-    <!-- Top Navigation Bar -->
-    <header class="bg-slate-900 border-b border-slate-800 sticky top-0 z-50 shadow-xl">
-        <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap justify-between items-center gap-4">
-            <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center shadow-lg shadow-cyan-500/20">
-                    <i class="fa-solid fa-moon text-white text-lg"></i>
-                </div>
-                <div>
-                    <h1 class="text-xl font-bold bg-gradient-to-r from-cyan-400 via-indigo-300 to-amber-300 bg-clip-text text-transparent">
-                        Disney Springs 3rd Shift Operations
-                    </h1>
-                    <p class="text-xs text-slate-400">Leadership Recap & Management System</p>
-                </div>
-            </div>
+  <!-- NAVIGATION -->
+  <header>
+    <div class="logo">HENRY L. <span>POWELL</span></div>
+    <nav>
+      <a href="#books">Books</a>
+      <a href="#burgess">Henry Burgess</a>
+      <a href="#videos">Trailers & Media</a>
+      <a href="#about">About</a>
+      <a href="#speaking">Contact</a>
+      <a href="https://www.amazon.com/stores/author/B0HKQ8B48Q/about?ingress=0&visitId=9a74dc18-3c13-4e8f-b7e8-86989c944fde&ref_=aufs_ap_ahdr_dsk_aa" target="_blank" class="btn-amazon-nav">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M15.93 17.09c-2.83 2.08-6.93 3.19-10.5 3.19-5.11 0-8.93-2.02-12.1-5.71-.25-.29-.02-.68.32-.47 3.39 2.05 7.49 3.28 11.78 3.28 3.25 0 6.94-.85 10.22-2.61.51-.27.91.31.28.32zm.9-2.05c-.36-.46-2.38-.22-3.3.09-.28.09-.32-.16-.06-.34 1.67-1.19 4.41-.85 4.72-.45.32.41-.09 3.18-1.68 4.49-.24.2-.42.09-.28-.18.45-.88.96-3.15.6-3.61zM21.2 12c0 5.08-4.12 9.2-9.2 9.2S2.8 17.08 2.8 12 6.92 2.8 12 2.8s9.2 4.12 9.2 9.2zm2.8 0c0-6.63-5.37-12-12-12S0 5.37 0 12s5.37 12 12 12 12-5.37 12-12z"/></svg>
+        Author on Amazon
+      </a>
+    </nav>
+  </header>
 
-            <div class="flex items-center gap-3">
-                <div class="bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 px-3 py-1.5 rounded-lg text-xs font-medium flex items-center gap-2">
-                    <i class="fa-solid fa-circle-check text-emerald-400"></i> <span>System Ready</span>
-                </div>
-                <div class="bg-slate-800/80 border border-slate-700/60 rounded-lg px-3 py-1.5 flex items-center gap-2 text-sm">
-                    <i class="fa-regular fa-calendar text-cyan-400"></i>
-                    <span id="currentDateDisplay" class="font-medium text-slate-200">2026-10-28</span>
-                </div>
-                <button onclick="downloadEmlFile()" class="bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded-lg text-sm font-medium transition shadow-lg shadow-indigo-600/30 flex items-center gap-2">
-                    <i class="fa-solid fa-file-arrow-down"></i> Download .EML File
-                </button>
-            </div>
-        </div>
-    </header>
-
-    <!-- Main Container -->
-    <main class="max-w-7xl mx-auto px-4 py-6 space-y-6">
-
-        <!-- Tabs Navigation -->
-        <div class="flex overflow-x-auto pb-2 gap-2 border-b border-slate-800 scrollbar-thin scrollbar-thumb-slate-700" id="leaderTabs">
-            <!-- Dynamically populated leader tabs -->
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-container">
+      <div class="hero-content">
+        <span class="hero-tag">Featured Memoir</span>
+        <h1 class="hero-title">UNFORMED DAYS</h1>
+        <p class="hero-subtitle">A Story of Trauma, Truth, and Redemption</p>
+        
+        <div class="hero-scripture">
+          “Your eyes saw my unformed body; all the days ordained for me were written in your book before one of them came to be.”
+          <span>— Psalm 139:16</span>
         </div>
 
-        <!-- Tab Content Area -->
-        <div id="tabContentContainer" class="space-y-6">
-            <!-- Rendered via JS -->
+        <p class="hero-desc">
+          Before the pulpit, before the radio broadcasts, and before the peace, were life's unformed days. Growing up in Jacksonville, Florida, Henry Powell was thrust into severe childhood hardship, tragic loss, and survival on West 2nd Street. A raw, triumphant testament to sovereign redemption.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="https://www.amazon.com/dp/9798174253780" target="_blank" class="btn-primary">
+            Buy on Amazon
+          </a>
+          <button class="btn-outline" onclick="openSample('unformed')">
+            Read Sample Excerpt
+          </button>
         </div>
+      </div>
 
-    </main>
+      <div class="hero-visual">
+        <div class="book-stage" onclick="openSample('unformed')">
+          <div class="book-3d">
+            <img src="Unformed Days Front Cover.jpg" alt="Unformed Days Front Cover" onerror="this.src='Image Resize for Proper Dimensions.png'">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Notification Toast -->
-    <div id="toast" class="fixed bottom-6 right-6 bg-emerald-600 text-white px-5 py-3 rounded-xl shadow-2xl flex items-center gap-3 transform translate-y-24 opacity-0 transition-all duration-300 z-50">
-        <i class="fa-solid fa-circle-check text-lg"></i>
-        <span id="toastMessage" class="text-sm font-medium">Saved successfully!</span>
+  <!-- BOOKS SECTION -->
+  <section id="books">
+    <div class="section-header">
+      <span class="section-tag">Bibliography</span>
+      <h2 class="section-title">Published Works</h2>
     </div>
 
-    <script>
-        let appData = {
-            currentDate: "2026-10-28",
-            activeTab: "Joint Leadership Recap",
-            leaders: [
-                {
-                    name: "Joint Leadership Recap",
-                    status: "Active",
-                    metrics: { scheduled: 1092.0, actual: 462.0, callIn: 112.0, variance: -630.0, variancePct: -0.5768, attendanceRate: 0.4230 },
-                    headcount: { present: 133, callSick: 0, fmla: 0, ado: 0, er: 0, ros: 0, late: 0, totalSched: 133 },
-                    logs: [
-                        { leader: "Henry Powell", detail: "Joint team briefing completed. Area washdown assignments verified across Disney Springs zones." },
-                        { leader: "Zoroaya Hernandez", detail: "Inspected Kings Building Fronts, Town Center walkways, and water feature maintenance." }
-                    ],
-                    training: [
-                        { trainer: "Raul", trainee: "Jovi", module: "Trainer on Duty", n1: 0, n2: 0, n3: 0, assessment: "Pending Final Review" },
-                        { trainer: "Henry Powell", trainee: "Team Lead", module: "Night 1 Facilitation", n1: 1, n2: 1, n3: 1, assessment: "Passed - Certified" }
-                    ],
-                    contracts: [
-                        { name: "Kings Projects", lead: "Henry Powell", status: "Completed", scope: "Scrub the Floor in WOD Male, Lime Garage and Uniqlo Guest RR" },
-                        { name: "Kings Carpet Cleaning", lead: "Henry Powell", status: "Completed", scope: "CIRQUE CURTAINS" },
-                        { name: "Kings Building Fronts", lead: "Henry Powell", status: "Completed", scope: "CIRQUE, WATERMELON LOT SIDE" },
-                        { name: "KSI Waterway cleaning", lead: "Henry Powell", status: "Completed", scope: "STK FOUNTAIN, ARCHIMEDES, 4 Ponds Net/ Vacuum Springs" }
-                    ]
-                },
-                {
-                    name: "Zoroaya Hernandez",
-                    status: "Active",
-                    metrics: { scheduled: 152.0, actual: 159.8, callIn: 16.0, variance: 7.8, variancePct: 0.0513, attendanceRate: 1.0513 },
-                    headcount: { present: 20, callSick: 0, fmla: 0, ado: 0, er: 0, ros: 0, late: 0, totalSched: 20 },
-                    logs: [
-                        { leader: "Zoroaya Hernandez", detail: "Conducted pre-shift safety huddle and equipment allocation for West Side zones." },
-                        { leader: "Zoroaya Hernandez", detail: "Oversaw specialized floor care and compliance checks." }
-                    ],
-                    training: [
-                        { trainer: "Zoroaya", trainee: "Trainee A", module: "Pressure washing", n1: 1, n2: 1, n3: 0, assessment: "Needs Remediation" }
-                    ],
-                    contracts: [
-                        { name: "West Side Deep Clean", lead: "Zoroaya Hernandez", status: "Completed", scope: "Town Center concourse washdown and gum removal." }
-                    ]
-                },
-                {
-                    name: "Henry Powell",
-                    status: "Active",
-                    metrics: { scheduled: 143.0, actual: 151.0, callIn: 16.0, variance: 8.0, variancePct: 0.0559, attendanceRate: 1.0559 },
-                    headcount: { present: 19, callSick: 0, fmla: 0, ado: 0, er: 0, ros: 0, late: 0, totalSched: 19 },
-                    logs: [
-                        { leader: "Henry Powell", detail: "Continue catching up on my emails. Made assignment adjustments. Check RACI Chart. Updated Attendance Matrix." },
-                        { leader: "Henry Powell", detail: "Check on the contracts, Checked the casts and the property for safety and show quality." },
-                        { leader: "Henry Powell", detail: "Completely rebuilt the calendar for BF and KSI. Cloud-based sync & cascading task management active." },
-                        { leader: "Henry Powell", detail: "Completely rebuilt the attendance tracker matrix." }
-                    ],
-                    training: [
-                        { trainer: "Raul", trainee: "Jovi", module: "Area Washdown", n1: 0, n2: 0, n3: 0, assessment: "Pending Evaluation" }
-                    ],
-                    contracts: [
-                        { name: "Kings Projects", lead: "Henry Powell", status: "Completed", scope: "Scrub the Floor in WOD Male, Lime Garage and Uniqlo Guest RR" },
-                        { name: "Kings Carpet Cleaning", lead: "Henry Powell", status: "Completed", scope: "CIRQUE CURTAINS" },
-                        { name: "Kings Building Fronts", lead: "Henry Powell", status: "Completed", scope: "CIRQUE, WATERMELON LOT SIDE" },
-                        { name: "KSI Waterway cleaning", lead: "Henry Powell", status: "Completed", scope: "STK FOUNTAIN, ARCHIMEDES, 4 Ponds Net/ Vacuum Springs" }
-                    ]
-                },
-                {
-                    name: "Jonathan Jimenez",
-                    status: "Active",
-                    metrics: { scheduled: 152.0, actual: 152.0, callIn: 16.0, variance: 0.0, variancePct: 0.0000, attendanceRate: 1.0000 },
-                    headcount: { present: 20, callSick: 0, fmla: 0, ado: 0, er: 0, ros: 0, late: 0, totalSched: 20 },
-                    logs: [
-                        { leader: "Jonathan Jimenez", detail: "Managed Marketplace area equipment deployment and chemical replenishment." }
-                    ],
-                    training: [{ trainer: "Jonathan", trainee: "Trainee B", module: "Area Washdown", n1: 1, n2: 1, n3: 1, assessment: "Passed - Certified" }],
-                    contracts: [{ name: "Marketplace Washdown", lead: "Jonathan Jimenez", status: "Completed", scope: "World of Disney perimeter pressure washing." }]
-                },
-                {
-                    name: "Cheryl Moore",
-                    status: "Off",
-                    metrics: { scheduled: 168.0, actual: 0.0, callIn: 0.0, variance: -168.0, variancePct: -1.0000, attendanceRate: 0.0000 },
-                    headcount: { present: 0, callSick: 0, fmla: 0, ado: 0, er: 0, ros: 0, late: 0, totalSched: 22 },
-                    logs: [{ leader: "Cheryl Moore", detail: "Leader scheduled off for rotation." }],
-                    training: [],
-                    contracts: []
-                },
-                {
-                    name: "Sabine Bade",
-                    status: "Leave of Absence",
-                    metrics: { scheduled: 168.0, actual: 0.0, callIn: 0.0, variance: -168.0, variancePct: -1.0000, attendanceRate: 0.0000 },
-                    headcount: { present: 0, callSick: 0, fmla: 0, ado: 0, er: 0, ros: 0, late: 0, totalSched: 22 },
-                    logs: [{ leader: "Sabine Bade", detail: "On approved Leave of Absence." }],
-                    training: [],
-                    contracts: []
-                },
-                {
-                    name: "Roxanne Canales",
-                    status: "Covering Overnight Duty",
-                    metrics: { scheduled: 168.0, actual: 168.0, callIn: 0.0, variance: 0.0, variancePct: 0.0000, attendanceRate: 1.0000 },
-                    headcount: { present: 22, callSick: 0, fmla: 0, ado: 0, er: 0, ros: 0, late: 0, totalSched: 22 },
-                    logs: [{ leader: "Roxanne Canales", detail: "Covering overnight duty for alternate zone support." }],
-                    training: [],
-                    contracts: [{ name: "Overnight Support", lead: "Roxanne Canales", status: "Completed", scope: "Backfill leadership for East Side." }]
-                },
-                {
-                    name: "Michael Rivera",
-                    status: "Off",
-                    metrics: { scheduled: 168.0, actual: 0.0, callIn: 0.0, variance: -168.0, variancePct: -1.0000, attendanceRate: 0.0000 },
-                    headcount: { present: 0, callSick: 0, fmla: 0, ado: 0, er: 0, ros: 0, late: 0, totalSched: 22 },
-                    logs: [{ leader: "Michael Rivera", detail: "Off duty." }],
-                    training: [],
-                    contracts: []
-                }
-            ]
-        };
-
-        const activeLeadersList = [
-            "Henry Powell",
-            "Zoroaya Hernandez",
-            "Jonathan Jimenez",
-            "Cheryl Moore",
-            "Sabine Bade",
-            "Roxanne Canales",
-            "Michael Rivera"
-        ];
-
-        const trainingModulesList = [
-            "Area Washdown",
-            "Pressure washing",
-            "Night 1 Facilitation",
-            "Trainer on Duty"
-        ];
-
-        function saveData() {
-            localStorage.setItem('disney_3rd_shift_recap', JSON.stringify(appData));
-        }
-
-        function renderTabs() {
-            const container = document.getElementById('leaderTabs');
-            container.innerHTML = '';
-            appData.leaders.forEach(leader => {
-                const isActive = leader.name === appData.activeTab;
-                let statusColor = 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30';
-                if (leader.status === 'Off') statusColor = 'bg-amber-500/20 text-amber-400 border-amber-500/30';
-                if (leader.status === 'Leave of Absence') statusColor = 'bg-rose-500/20 text-rose-400 border-rose-500/30';
-                if (leader.status === 'Covering Overnight Duty') statusColor = 'bg-purple-500/20 text-purple-400 border-purple-500/30';
-
-                const btn = document.createElement('button');
-                btn.className = `px-4 py-3 rounded-xl font-medium text-sm whitespace-nowrap transition flex items-center gap-2.5 border ${isActive ? 'bg-indigo-600 border-indigo-500 text-white shadow-lg shadow-indigo-600/30' : 'bg-slate-900 border-slate-800 text-slate-300 hover:bg-slate-800'}`;
-                btn.innerHTML = `
-                    <span>${leader.name}</span>
-                    <span class="text-[10px] px-2 py-0.5 rounded-full border ${statusColor}">${leader.status}</span>
-                `;
-                btn.onclick = () => {
-                    appData.activeTab = leader.name;
-                    renderApp();
-                };
-                container.appendChild(btn);
-            });
-        }
-
-        function renderApp() {
-            renderTabs();
-            const container = document.getElementById('tabContentContainer');
-            const leader = appData.leaders.find(l => l.name === appData.activeTab) || appData.leaders[0];
-
-            let statusColor = 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30';
-            if (leader.status === 'Off') statusColor = 'bg-amber-500/20 text-amber-400 border-amber-500/30';
-            if (leader.status === 'Leave of Absence') statusColor = 'bg-rose-500/20 text-rose-400 border-rose-500/30';
-            if (leader.status === 'Covering Overnight Duty') statusColor = 'bg-purple-500/20 text-purple-400 border-purple-500/30';
-
-            container.innerHTML = `
-                <div class="bg-gradient-to-r from-slate-900 via-slate-900 to-indigo-950/60 border border-slate-800 rounded-2xl p-6 shadow-xl flex flex-wrap justify-between items-center gap-4">
-                    <div>
-                        <div class="flex items-center gap-3">
-                            <h2 class="text-2xl font-bold text-white">${leader.name}</h2>
-                            <span class="text-xs px-3 py-1 rounded-full border font-medium ${statusColor}">${leader.status}</span>
-                        </div>
-                        <p class="text-sm text-slate-400 mt-1">3rd Shift Custodial Operations — End of Shift Recap & Log</p>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Operational Status:</label>
-                        <select onchange="updateLeaderStatus('${leader.name}', this.value)" class="bg-slate-950 border border-slate-700 text-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-indigo-500">
-                            <option value="Active" ${leader.status === 'Active' ? 'selected' : ''}>Active</option>
-                            <option value="Off" ${leader.status === 'Off' ? 'selected' : ''}>Off</option>
-                            <option value="Covering Overnight Duty" ${leader.status === 'Covering Overnight Duty' ? 'selected' : ''}>Covering Overnight Duty</option>
-                            <option value="Leave of Absence" ${leader.status === 'Leave of Absence' ? 'selected' : ''}>Leave of Absence (LOA)</option>
-                        </select>
-                    </div>
-                </div>
-
-                <!-- 1. Shift Attendance & Labor Metrics -->
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl space-y-4">
-                    <div class="flex justify-between items-center">
-                        <h3 class="text-base font-bold text-cyan-400 flex items-center gap-2">
-                            <i class="fa-solid fa-chart-line"></i> 1. Shift Attendance & Labor Metrics
-                        </h3>
-                        <button onclick="recalcMetrics('${leader.name}')" class="text-xs text-indigo-400 hover:text-indigo-300 bg-indigo-500/10 px-3 py-1 rounded-lg border border-indigo-500/30 transition">
-                            <i class="fa-solid fa-calculator"></i> Recalculate
-                        </button>
-                    </div>
-                    
-                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-                        <div class="bg-slate-950/80 border border-slate-800 p-4 rounded-xl">
-                            <span class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider block">Scheduled Labor (Hrs)</span>
-                            <input type="number" step="0.1" id="schedLabor" value="${leader.metrics.scheduled.toFixed(1)}" onblur="formatDecimalInput(this)" oninput="syncMetrics('${leader.name}')" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1.5 text-lg font-bold text-white mt-1 focus:outline-none focus:border-cyan-500">
-                        </div>
-                        <div class="bg-slate-950/80 border border-slate-800 p-4 rounded-xl">
-                            <span class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider block">Actual Labor (Hrs)</span>
-                            <input type="number" step="0.1" id="actualLabor" value="${leader.metrics.actual.toFixed(1)}" onblur="formatDecimalInput(this)" oninput="syncMetrics('${leader.name}')" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1.5 text-lg font-bold text-emerald-400 mt-1 focus:outline-none focus:border-emerald-500">
-                        </div>
-                        <div class="bg-slate-950/80 border border-slate-800 p-4 rounded-xl">
-                            <span class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider block">Call In Factor (Hrs)</span>
-                            <input type="number" step="0.1" id="callInFactor" value="${leader.metrics.callIn.toFixed(1)}" onblur="formatDecimalInput(this)" oninput="syncMetrics('${leader.name}')" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1.5 text-lg font-bold text-amber-400 mt-1 focus:outline-none focus:border-amber-500">
-                        </div>
-                        <div class="bg-slate-950/80 border border-slate-800 p-4 rounded-xl">
-                            <span class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider block">Labor Variance (Hrs)</span>
-                            <span id="dispVariance" class="text-lg font-bold text-indigo-400 block mt-1">${leader.metrics.variance.toFixed(1)}</span>
-                        </div>
-                        <div class="bg-slate-950/80 border border-slate-800 p-4 rounded-xl">
-                            <span class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider block">Variance Percentage</span>
-                            <span id="dispVarPct" class="text-lg font-bold text-indigo-400 block mt-1">${leader.metrics.variancePct.toFixed(4)}</span>
-                        </div>
-                        <div class="bg-slate-950/80 border border-slate-800 p-4 rounded-xl">
-                            <span class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider block">Attendance Rate</span>
-                            <span id="dispAttRate" class="text-lg font-bold text-cyan-400 block mt-1">${leader.metrics.attendanceRate.toFixed(4)}</span>
-                        </div>
-                    </div>
-
-                    <div class="mt-4 pt-4 border-t border-slate-800">
-                        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Cast Member Attendance Breakdown (Headcount & Status Codes)</h4>
-                        <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3">
-                            <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 text-center">
-                                <span class="text-[10px] text-slate-400 block uppercase">Cast Present</span>
-                                <input type="number" id="hcPresent" value="${leader.headcount.present}" oninput="syncHeadcount('${leader.name}')" class="w-16 bg-slate-900 border border-slate-700 text-center font-bold text-white rounded p-1 mt-1">
-                            </div>
-                            <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 text-center">
-                                <span class="text-[10px] text-amber-400 block uppercase">Call Sick</span>
-                                <input type="number" id="hcSick" value="${leader.headcount.callSick}" oninput="syncHeadcount('${leader.name}')" class="w-16 bg-slate-900 border border-slate-700 text-center font-bold text-white rounded p-1 mt-1">
-                            </div>
-                            <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 text-center">
-                                <span class="text-[10px] text-purple-400 block uppercase">FMLA</span>
-                                <input type="number" id="hcFmla" value="${leader.headcount.fmla}" oninput="syncHeadcount('${leader.name}')" class="w-16 bg-slate-900 border border-slate-700 text-center font-bold text-white rounded p-1 mt-1">
-                            </div>
-                            <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 text-center">
-                                <span class="text-[10px] text-blue-400 block uppercase">ADO</span>
-                                <input type="number" id="hcAdo" value="${leader.headcount.ado}" oninput="syncHeadcount('${leader.name}')" class="w-16 bg-slate-900 border border-slate-700 text-center font-bold text-white rounded p-1 mt-1">
-                            </div>
-                            <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 text-center">
-                                <span class="text-[10px] text-rose-400 block uppercase">ER (Emergency)</span>
-                                <input type="number" id="hcEr" value="${leader.headcount.er}" oninput="syncHeadcount('${leader.name}')" class="w-16 bg-slate-900 border border-slate-700 text-center font-bold text-white rounded p-1 mt-1">
-                            </div>
-                            <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 text-center">
-                                <span class="text-[10px] text-emerald-400 block uppercase">ROS</span>
-                                <input type="number" id="hcRos" value="${leader.headcount.ros}" oninput="syncHeadcount('${leader.name}')" class="w-16 bg-slate-900 border border-slate-700 text-center font-bold text-white rounded p-1 mt-1">
-                            </div>
-                            <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 text-center">
-                                <span class="text-[10px] text-orange-400 block uppercase">Late</span>
-                                <input type="number" id="hcLate" value="${leader.headcount.late}" oninput="syncHeadcount('${leader.name}')" class="w-16 bg-slate-900 border border-slate-700 text-center font-bold text-white rounded p-1 mt-1">
-                            </div>
-                            <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 text-center">
-                                <span class="text-[10px] text-cyan-400 block uppercase">Total Headcount</span>
-                                <span id="hcTotalDisplay" class="text-base font-bold text-white block mt-1">${leader.headcount.totalSched}</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 2. Leadership End of Shift Logs -->
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl space-y-4">
-                    <div class="flex justify-between items-center">
-                        <h3 class="text-base font-bold text-amber-400 flex items-center gap-2">
-                            <i class="fa-solid fa-clipboard-user"></i> 2. Leadership End of Shift Logs & Detailed Comments
-                        </h3>
-                        <button onclick="addLogEntry('${leader.name}')" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-semibold px-3 py-1.5 rounded-lg text-xs transition flex items-center gap-1.5 shadow-md shadow-amber-500/20">
-                            <i class="fa-solid fa-plus"></i> Add Log Entry
-                        </button>
-                    </div>
-
-                    <div class="space-y-3" id="logsContainer">
-                        ${leader.logs.map((log, index) => `
-                            <div class="bg-slate-950 border border-slate-800 rounded-xl p-4 flex flex-col sm:flex-row gap-4 items-center justify-between">
-                                <div class="w-full sm:w-56 shrink-0">
-                                    <span class="text-[10px] text-slate-400 uppercase block mb-1">Logging Leader</span>
-                                    <select onchange="updateLogLeader('${leader.name}', ${index}, this.value)" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1.5 text-xs text-amber-300 font-semibold focus:outline-none focus:border-amber-500">
-                                        ${activeLeadersList.map(ldr => `<option value="${ldr}" ${log.leader === ldr ? 'selected' : ''}>${ldr}</option>`).join('')}
-                                    </select>
-                                </div>
-                                <div class="w-full grow">
-                                    <span class="text-[10px] text-slate-400 uppercase block mb-1">Shift Activity / Comment</span>
-                                    <input type="text" value="${log.detail}" onchange="updateLog('${leader.name}', ${index}, 'detail', this.value)" placeholder="Enter shift activity / comment..." class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2 text-xs text-slate-200 focus:outline-none focus:border-amber-500">
-                                </div>
-                                <button onclick="deleteLog('${leader.name}', ${index})" class="text-slate-500 hover:text-rose-400 p-2 self-end sm:self-center transition"><i class="fa-solid fa-trash-can"></i></button>
-                            </div>
-                        `).join('')}
-                    </div>
-                </div>
-
-                <!-- 3. Shift Training & Skills Assessment Tracker -->
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl space-y-4">
-                    <div class="flex justify-between items-center">
-                        <h3 class="text-base font-bold text-purple-400 flex items-center gap-2">
-                            <i class="fa-solid fa-graduation-cap"></i> 3. Shift Training & Skills Assessment Tracker
-                        </h3>
-                        <button onclick="addTraining('${leader.name}')" class="bg-purple-600 hover:bg-purple-500 text-white px-3 py-1.5 rounded-lg text-xs font-semibold transition flex items-center gap-1.5 shadow-md shadow-purple-600/20">
-                            <i class="fa-solid fa-plus"></i> Add Training Entry
-                        </button>
-                    </div>
-
-                    <div class="overflow-x-auto">
-                        <table class="w-full text-left text-xs text-slate-300">
-                            <thead class="bg-slate-950 text-slate-400 uppercase tracking-wider border-b border-slate-800">
-                                <tr>
-                                    <th class="p-3">Trainer</th>
-                                    <th class="p-3">Trainee</th>
-                                    <th class="p-3">Training Module / Focus</th>
-                                    <th class="p-3 text-center">Night 1 OJT</th>
-                                    <th class="p-3 text-center">Night 2 OJT</th>
-                                    <th class="p-3 text-center">Night 3 OJT</th>
-                                    <th class="p-3">Training Assessment / Sign-Off</th>
-                                    <th class="p-3 text-right">Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody class="divide-y divide-slate-800/60" id="trainingTableBody">
-                                ${leader.training.map((t, idx) => `
-                                    <tr class="hover:bg-slate-950/40">
-                                        <td class="p-3"><input type="text" value="${t.trainer}" onchange="updateTraining('${leader.name}', ${idx}, 'trainer', this.value)" class="bg-slate-950 border border-slate-700 rounded px-2 py-1 w-full text-white"></td>
-                                        <td class="p-3"><input type="text" value="${t.trainee}" onchange="updateTraining('${leader.name}', ${idx}, 'trainee', this.value)" class="bg-slate-950 border border-slate-700 rounded px-2 py-1 w-full text-white"></td>
-                                        <td class="p-3">
-                                            <select onchange="updateTraining('${leader.name}', ${idx}, 'module', this.value)" class="bg-slate-950 border border-slate-700 rounded px-2.5 py-1.5 w-full text-xs text-white font-medium">
-                                                ${trainingModulesList.map(mod => `<option value="${mod}" ${t.module === mod ? 'selected' : ''}>${mod}</option>`).join('')}
-                                            </select>
-                                        </td>
-                                        <td class="p-3 text-center"><input type="checkbox" ${t.n1 ? 'checked' : ''} onchange="updateTraining('${leader.name}', ${idx}, 'n1', this.checked ? 1 : 0)" class="w-4 h-4 rounded bg-slate-950 border-slate-700 text-purple-600 focus:ring-0 cursor-pointer"></td>
-                                        <td class="p-3 text-center"><input type="checkbox" ${t.n2 ? 'checked' : ''} onchange="updateTraining('${leader.name}', ${idx}, 'n2', this.checked ? 1 : 0)" class="w-4 h-4 rounded bg-slate-950 border-slate-700 text-purple-600 focus:ring-0 cursor-pointer"></td>
-                                        <td class="p-3 text-center"><input type="checkbox" ${t.n3 ? 'checked' : ''} onchange="updateTraining('${leader.name}', ${idx}, 'n3', this.checked ? 1 : 0)" class="w-4 h-4 rounded bg-slate-950 border-slate-700 text-purple-600 focus:ring-0 cursor-pointer"></td>
-                                        <td class="p-3">
-                                            <select onchange="updateTraining('${leader.name}', ${idx}, 'assessment', this.value)" class="bg-slate-950 border border-slate-700 rounded px-2.5 py-1.5 w-full text-xs font-semibold ${t.assessment.includes('Passed') ? 'text-emerald-400' : t.assessment.includes('Remediation') ? 'text-rose-400' : 'text-amber-400'}">
-                                                <option value="Pending Evaluation" ${t.assessment === 'Pending Evaluation' ? 'selected' : ''}>Pending Evaluation</option>
-                                                <option value="Passed - Certified" ${t.assessment === 'Passed - Certified' ? 'selected' : ''}>Passed - Certified</option>
-                                                <option value="Needs Remediation" ${t.assessment === 'Needs Remediation' ? 'selected' : ''}>Needs Remediation</option>
-                                                <option value="Extended OJT Required" ${t.assessment === 'Extended OJT Required' ? 'selected' : ''}>Extended OJT Required</option>
-                                            </select>
-                                        </td>
-                                        <td class="p-3 text-right"><button onclick="deleteTraining('${leader.name}', ${idx})" class="text-slate-500 hover:text-rose-400 p-1"><i class="fa-solid fa-trash-can"></i></button></td>
-                                    </tr>
-                                `).join('')}
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <!-- 4. Specialized Contracts Performance & Status -->
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl space-y-4">
-                    <div class="flex justify-between items-center">
-                        <h3 class="text-base font-bold text-emerald-400 flex items-center gap-2">
-                            <i class="fa-solid fa-file-contract"></i> 4. Specialized Contracts Performance & Status
-                        </h3>
-                        <button onclick="addContract('${leader.name}')" class="bg-emerald-600 hover:bg-emerald-500 text-white px-3 py-1.5 rounded-lg text-xs font-semibold transition flex items-center gap-1.5 shadow-md shadow-emerald-600/20">
-                            <i class="fa-solid fa-plus"></i> Add Contract Task
-                        </button>
-                    </div>
-
-                    <div class="space-y-3">
-                        ${leader.contracts.map((c, idx) => `
-                            <div class="bg-slate-950 border border-slate-800 rounded-xl p-4 flex flex-col md:flex-row gap-4 items-stretch md:items-center justify-between">
-                                <div class="w-full md:w-1/4">
-                                    <span class="text-[10px] text-slate-400 uppercase block mb-1">Contract Name</span>
-                                    <input type="text" value="${c.name}" onchange="updateContract('${leader.name}', ${idx}, 'name', this.value)" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-1.5 text-xs font-bold text-white">
-                                </div>
-                                <div class="w-full md:w-1/5">
-                                    <span class="text-[10px] text-slate-400 uppercase block mb-1">Assigned Lead</span>
-                                    <input type="text" value="${c.lead}" onchange="updateContract('${leader.name}', ${idx}, 'lead', this.value)" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-slate-200">
-                                </div>
-                                <div class="w-full md:w-36">
-                                    <span class="text-[10px] text-slate-400 uppercase block mb-1">Status</span>
-                                    <select onchange="updateContract('${leader.name}', ${idx}, 'status', this.value)" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-1.5 text-xs font-semibold ${c.status === 'Completed' ? 'text-emerald-400' : 'text-amber-400'}">
-                                        <option value="Completed" ${c.status === 'Completed' ? 'selected' : ''}>Completed</option>
-                                        <option value="In Progress" ${c.status === 'In Progress' ? 'selected' : ''}>In Progress</option>
-                                        <option value="Pending" ${c.status === 'Pending' ? 'selected' : ''}>Pending</option>
-                                    </select>
-                                </div>
-                                <div class="w-full grow">
-                                    <span class="text-[10px] text-slate-400 uppercase block mb-1">Scope / Shift Progress Summary</span>
-                                    <input type="text" value="${c.scope}" onchange="updateContract('${leader.name}', ${idx}, 'scope', this.value)" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-slate-200">
-                                </div>
-                                <button onclick="deleteContract('${leader.name}', ${idx})" class="text-slate-500 hover:text-rose-400 p-2 self-end md:self-center"><i class="fa-solid fa-trash-can"></i></button>
-                            </div>
-                        `).join('')}
-                    </div>
-                </div>
-            `;
-            document.getElementById('currentDateDisplay').innerText = appData.currentDate;
-        }
-
-        function updateLeaderStatus(leaderName, status) {
-            const l = appData.leaders.find(x => x.name === leaderName);
-            if (l) l.status = status;
-            saveData();
-            renderApp();
-        }
-
-        function syncMetrics(leaderName) {
-            const l = appData.leaders.find(x => x.name === leaderName);
-            if (!l) return;
-            l.metrics.scheduled = parseFloat(document.getElementById('schedLabor').value) || 0.0;
-            l.metrics.actual = parseFloat(document.getElementById('actualLabor').value) || 0.0;
-            l.metrics.callIn = parseFloat(document.getElementById('callInFactor').value) || 0.0;
-            l.metrics.variance = Number((l.metrics.actual - l.metrics.scheduled).toFixed(1));
-            l.metrics.variancePct = l.metrics.scheduled > 0 ? Number((l.metrics.variance / l.metrics.scheduled).toFixed(4)) : 0.0000;
-            l.metrics.attendanceRate = l.metrics.scheduled > 0 ? Number((l.metrics.actual / l.metrics.scheduled).toFixed(4)) : 0.0000;
-
-            document.getElementById('dispVariance').innerText = l.metrics.variance.toFixed(1);
-            document.getElementById('dispVarPct').innerText = l.metrics.variancePct.toFixed(4);
-            document.getElementById('dispAttRate').innerText = l.metrics.attendanceRate.toFixed(4);
-            saveData();
-        }
-
-        function formatDecimalInput(input) {
-            let val = parseFloat(input.value);
-            if (!isNaN(val)) {
-                input.value = val.toFixed(1);
-            } else {
-                input.value = "0.0";
-            }
-        }
-
-        function syncHeadcount(leaderName) {
-            const l = appData.leaders.find(x => x.name === leaderName);
-            if (!l) return;
-            l.headcount.present = parseInt(document.getElementById('hcPresent').value) || 0;
-            l.headcount.callSick = parseInt(document.getElementById('hcSick').value) || 0;
-            l.headcount.fmla = parseInt(document.getElementById('hcFmla').value) || 0;
-            l.headcount.ado = parseInt(document.getElementById('hcAdo').value) || 0;
-            l.headcount.er = parseInt(document.getElementById('hcEr').value) || 0;
-            l.headcount.ros = parseInt(document.getElementById('hcRos').value) || 0;
-            l.headcount.late = parseInt(document.getElementById('hcLate').value) || 0;
-            l.headcount.totalSched = l.headcount.present + l.headcount.callSick + l.headcount.fmla + l.headcount.ado + l.headcount.er;
-            document.getElementById('hcTotalDisplay').innerText = l.headcount.totalSched;
-            saveData();
-        }
-
-        function recalcMetrics(leaderName) {
-            saveData();
-            renderApp();
-            showToast("Metrics recalculated successfully!");
-        }
-
-        function addLogEntry(leaderName) {
-            const l = appData.leaders.find(x => x.name === leaderName);
-            if (l) l.logs.push({ leader: leaderName !== "Joint Leadership Recap" ? leaderName : "Henry Powell", detail: "New shift activity note..." });
-            saveData();
-            renderApp();
-        }
-
-        function updateLog(leaderName, idx, field, val) {
-            const l = appData.leaders.find(x => x.name === leaderName);
-            if (l && l.logs[idx]) {
-                l.logs[idx][field] = val;
-                saveData();
-            }
-        }
-
-        function updateLogLeader(leaderName, idx, newLeader) {
-            const l = appData.leaders.find(x => x.name === leaderName);
-            if (l && l.logs[idx]) {
-                l.logs[idx].leader = newLeader;
-                saveData();
-            }
-        }
-
-        function deleteLog(leaderName, idx) {
-            const l = appData.leaders.find(x => x.name === leaderName);
-            if (l) l.logs.splice(idx, 1);
-            saveData();
-            renderApp();
-        }
-
-        function addTraining(leaderName) {
-            const l = appData.leaders.find(x => x.name === leaderName);
-            if (l) l.training.push({ trainer: "Lead Name", trainee: "Trainee Name", module: "Area Washdown", n1: 0, n2: 0, n3: 0, assessment: "Pending Evaluation" });
-            saveData();
-            renderApp();
-        }
-
-        function updateTraining(leaderName, idx, field, val) {
-            const l = appData.leaders.find(x => x.name === leaderName);
-            if (l && l.training[idx]) {
-                l.training[idx][field] = val;
-                saveData();
-            }
-        }
-
-        function deleteTraining(leaderName, idx) {
-            const l = appData.leaders.find(x => x.name === leaderName);
-            if (l) l.training.splice(idx, 1);
-            saveData();
-            renderApp();
-        }
-
-        function addContract(leaderName) {
-            const l = appData.leaders.find(x => x.name === leaderName);
-            if (l) l.contracts.push({ name: "New Contract Task", lead: leaderName, status: "In Progress", scope: "Scope details..." });
-            saveData();
-            renderApp();
-        }
-
-        function updateContract(leaderName, idx, field, val) {
-            const l = appData.leaders.find(x => x.name === leaderName);
-            if (l && l.contracts[idx]) {
-                l.contracts[idx][field] = val;
-                saveData();
-            }
-        }
-
-        function deleteContract(leaderName, idx) {
-            const l = appData.leaders.find(x => x.name === leaderName);
-            if (l) l.contracts.splice(idx, 1);
-            saveData();
-            renderApp();
-        }
-
-        function downloadEmlFile() {
-            const leader = appData.leaders.find(l => l.name === appData.activeTab) || appData.leaders[0];
-            const subject = `3rd Shift Custodial Operations Recap — ${appData.currentDate} (${leader.name})`;
-
-            let htmlBody = `<!DOCTYPE html>
-<html>
-<head><meta charset="UTF-8"></head>
-<body style="margin: 0; padding: 10px; background-color: #0b132b; font-family: Arial, sans-serif; text-align: left;">
-    <div style="width: 100%; max-width: 600px; margin: 0; background-color: #1c2541; border: 1px solid #3a506b; border-radius: 8px; padding: 20px; color: #f8fafc; text-align: left;">
-        <div style="text-align: left; border-bottom: 2px solid #48cae4; padding-bottom: 12px; margin-bottom: 15px;">
-            <h2 style="color: #48cae4; margin: 0 0 4px 0; font-size: 18px; text-align: left;">Disney Springs 3rd Shift Operations</h2>
-            <p style="color: #94a3b8; margin: 0; font-size: 12px; text-align: left;">End of Shift Leadership Recap — ${appData.currentDate}</p>
+    <div class="books-grid">
+      <!-- Book 1: Unformed Days -->
+      <div class="book-card">
+        <div class="card-cover-container">
+          <img src="Unformed Days Front Cover.jpg" alt="Unformed Days by Henry L Powell">
         </div>
-
-        <div style="background-color: #0b132b; border: 1px solid #3a506b; border-radius: 6px; padding: 12px; margin-bottom: 12px; text-align: left;">
-            <h3 style="color: #ffb703; margin: 0 0 6px 0; font-size: 13px; text-transform: uppercase; text-align: left;">Leader Profile: ${leader.name}</h3>
-            <p style="margin: 0; font-size: 12px; color: #cbd5e1; text-align: left;"><strong>Operational Status:</strong> <span style="color: #34d399;">${leader.status}</span></p>
+        <div class="card-body">
+          <div class="card-meta">Memoir & Christian Faith</div>
+          <h3 class="card-title">Unformed Days</h3>
+          <p class="card-subtitle">A Story of Trauma, Truth, and Redemption</p>
+          <p class="card-isbn">ISBN: 979-8174253780</p>
+          <p class="card-desc">
+            A gripping memoir chronicling survival through a condemned house on West 2nd Street, martial arts discipline, courtroom trials, a life-altering bus stop conversion, and a divine call into ministry.
+          </p>
+          <div class="card-actions">
+            <a href="https://www.amazon.com/dp/9798174253780" target="_blank" class="btn-buy-amazon">Buy on Amazon</a>
+            <button class="btn-read-sample" onclick="openSample('unformed')">Sample</button>
+          </div>
         </div>
+      </div>
 
-        <div style="background-color: #0b132b; border: 1px solid #3a506b; border-radius: 6px; padding: 12px; margin-bottom: 12px; text-align: left;">
-            <h3 style="color: #48cae4; margin: 0 0 8px 0; font-size: 13px; text-transform: uppercase; text-align: left;">1. Labor & Attendance Metrics</h3>
-            <table style="width: 100%; border-collapse: collapse; font-size: 11px; text-align: left;">
-                <tr style="background-color: #3a506b; color: #ffffff;">
-                    <th style="padding: 5px; border: 1px solid #475569; text-align: left;">Scheduled</th>
-                    <th style="padding: 5px; border: 1px solid #475569; text-align: left;">Actual</th>
-                    <th style="padding: 5px; border: 1px solid #475569; text-align: left;">Call-In</th>
-                    <th style="padding: 5px; border: 1px solid #475569; text-align: left;">Variance</th>
-                    <th style="padding: 5px; border: 1px solid #475569; text-align: left;">Attendance</th>
-                </tr>
-                <tr>
-                    <td style="padding: 5px; border: 1px solid #475569; text-align: left;">${leader.metrics.scheduled.toFixed(1)}h</td>
-                    <td style="padding: 5px; border: 1px solid #475569; text-align: left;">${leader.metrics.actual.toFixed(1)}h</td>
-                    <td style="padding: 5px; border: 1px solid #475569; text-align: left;">${leader.metrics.callIn.toFixed(1)}h</td>
-                    <td style="padding: 5px; border: 1px solid #475569; text-align: left;">${leader.metrics.variance.toFixed(1)}h</td>
-                    <td style="padding: 5px; border: 1px solid #475569; text-align: left; color: #48cae4; font-weight: bold;">${(leader.metrics.attendanceRate * 100).toFixed(1)}%</td>
-                </tr>
-            </table>
+      <!-- Book 2: Still Reaching -->
+      <div class="book-card">
+        <div class="card-cover-container crop-right">
+          <img src="Image Resize for Proper Dimensions.png" alt="Still Reaching by Henry L Powell">
         </div>
-
-        <div style="background-color: #0b132b; border: 1px solid #3a506b; border-radius: 6px; padding: 12px; margin-bottom: 12px; text-align: left;">
-            <h3 style="color: #ffb703; margin: 0 0 8px 0; font-size: 13px; text-transform: uppercase; text-align: left;">2. Shift Logs & Comments</h3>
-            <ul style="padding-left: 15px; margin: 0; font-size: 11px; color: #cbd5e1; line-height: 1.5; text-align: left;">
-                ${leader.logs.map(l => `<li style="text-align: left; margin-bottom: 4px;"><strong style="color: #ffb703;">[${l.leader}]</strong> ${l.detail}</li>`).join('')}
-            </ul>
+        <div class="card-body">
+          <div class="card-meta">Healing & Spiritual Growth</div>
+          <h3 class="card-title">Still Reaching</h3>
+          <p class="card-subtitle">Surviving Abuse, Finding Christ, and Healing</p>
+          <p class="card-isbn">ISBN: 979-8160431284</p>
+          <p class="card-desc">
+            "The dark rooms of trauma do not get the final word." A deeply personal roadmap for anyone carrying the exhausting weight of shame, offering biblical truths to strip away armor and step back into the light.
+          </p>
+          <div class="card-actions">
+            <a href="https://www.amazon.com/dp/9798160431284" target="_blank" class="btn-buy-amazon">Buy on Amazon</a>
+            <button class="btn-read-sample" onclick="openSample('reaching')">Sample</button>
+          </div>
         </div>
+      </div>
 
-        <div style="background-color: #0b132b; border: 1px solid #3a506b; border-radius: 6px; padding: 12px; margin-bottom: 12px; text-align: left;">
-            <h3 style="color: #c084fc; margin: 0 0 8px 0; font-size: 13px; text-transform: uppercase; text-align: left;">3. Training & OJT Assessment</h3>
-            <ul style="padding-left: 15px; margin: 0; font-size: 11px; color: #cbd5e1; line-height: 1.5; text-align: left;">
-                ${leader.training.map(t => `<li style="text-align: left; margin-bottom: 4px;"><strong style="color: #f8fafc;">${t.trainee}</strong> (${t.module}) — Trainer: ${t.trainer} | Status: <span style="color: #34d399; font-weight: bold;">${t.assessment}</span></li>`).join('')}
-            </ul>
+      <!-- Book 3: The Abiding Word -->
+      <div class="book-card">
+        <div class="card-cover-container crop-right">
+          <img src="Words%20That%20Abide%20paperback%20cover%20rev.jpg" alt="The Abiding Word by Henry L Powell" onerror="this.onerror=null; this.src='Words That Abide paperback cover rev.jpeg'; if (!this.complete) { this.src='abiding-word.jpg'; }">
         </div>
-
-        <div style="background-color: #0b132b; border: 1px solid #3a506b; border-radius: 6px; padding: 12px; text-align: left;">
-            <h3 style="color: #34d399; margin: 0 0 8px 0; font-size: 13px; text-transform: uppercase; text-align: left;">4. Specialized Contracts & Status</h3>
-            <ul style="padding-left: 15px; margin: 0; font-size: 11px; color: #cbd5e1; line-height: 1.5; text-align: left;">
-                ${leader.contracts.map(c => `<li style="text-align: left; margin-bottom: 4px;"><strong style="color: #f8fafc;">${c.name}</strong> (${c.status}) — Lead: ${c.lead}<br><span style="color: #94a3b8;">Scope: ${c.scope}</span></li>`).join('')}
-            </ul>
+        <div class="card-body">
+          <div class="card-meta">Theology & Modern Parables</div>
+          <h3 class="card-title">The Abiding Word</h3>
+          <p class="card-subtitle">Sermons Brought to Life</p>
+          <p class="card-isbn">ISBN: 979-8176971552</p>
+          <p class="card-desc">
+            Transforming profound biblical teachings into gripping, modern-day parables. Discover the reality of living Christian faith through encounters ranging from midnight shifts to corporate boardrooms.
+          </p>
+          <div class="card-actions">
+            <a href="https://a.co/d/08R94uEK" target="_blank" class="btn-buy-amazon">Buy on Amazon</a>
+            <button class="btn-read-sample" onclick="openSample('abiding')">Sample</button>
+          </div>
         </div>
+      </div>
 
-        <p style="text-align: left; font-size: 10px; color: #64748b; margin-top: 20px;">Generated automatically via Disney Springs 3rd Shift Operations System</p>
+
+
     </div>
-</body>
-</html>`;
+  </section>
 
-            const emlContent = `X-Unsent: 1
-MIME-Version: 1.0
-Date: ${new Date().toUTCString()}
-Subject: ${subject}
-Content-Type: text/html; charset=UTF-8
+  <!-- WORKS BY HENRY BURGESS (DEDICATED SECTION) -->
+  <section id="burgess">
+    <div class="section-header">
+      <div class="pen-name-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+        Pen Name Showcase
+      </div>
+      <h2 class="section-title">Works by Henry Burgess</h2>
+      <p style="color: var(--text-muted); max-width: 680px; margin: 0.75rem auto 0; font-size: 1.05rem;">
+        Exploring fiction, gripping storytelling, and new literary horizons under the pseudonym <strong>Henry Burgess</strong>. Featuring released works and 2027 forthcoming titles.
+      </p>
+    </div>
 
-` + htmlBody;
+    <div class="books-grid">
+      <!-- Henry Burgess Book 3: Released Work (The Singular Name) -->
+      <div class="book-card">
+        <div class="card-cover-container">
+          <img src="Burgess-Book-3.jpg" alt="The Singular Name by Henry Burgess" onerror="this.onerror=null; this.src='Burgess-Book-3.png'; if(!this.complete) { this.src='Burgess-Book-3'; }">
+        </div>
+        <div class="upcoming-video-container" style="padding: 1.25rem 1.8rem 0 1.8rem;">
+          <video controls style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px; background: #000; display: block; border: 1px solid var(--border-color);">
+            <source src="Burgess-video-3.mp4" type="video/mp4">
+            <source src="Burgess-video-3.MOV" type="video/quicktime">
+            <source src="Burgess-video-3.mov" type="video/quicktime">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">Released Fiction &bull; by Henry Burgess</div>
+          <h3 class="card-title">The Singular Name</h3>
+          <p class="card-subtitle">Released Work</p>
+          <p class="card-isbn">Author: Henry Burgess</p>
+          <p class="card-desc">
+            An intricate tale of mystery, compelling characters, and unforgettable suspense written under the pen name Henry Burgess. Now available worldwide on Amazon.
+          </p>
+          <div class="card-actions" style="margin-top: 1rem;">
+            <a href="https://a.co/d/0e5HQMZo" target="_blank" class="btn-buy-amazon">Buy on Amazon</a>
+          </div>
+        </div>
+      </div>
 
-            const blob = new Blob([emlContent], { type: 'message/rfc822' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = `3rd_Shift_Recap_${appData.currentDate}_${leader.name.replace(/\s+/g, '_')}.eml`;
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-            showToast("EML File downloaded successfully!");
-        }
+      <!-- Henry Burgess Book 1: Upcoming Project -->
+      <div class="upcoming-card">
+        <span class="upcoming-stamp">Coming 2027</span>
+        <div class="upcoming-cover-container">
+          <img src="Burgess-Book-1.jpg" alt="Henry Burgess Book 1" onerror="this.onerror=null; this.src='Burgess-Book-1.png'; if(!this.complete) { this.src='Burgess-Book-1'; }">
+        </div>
+        <div class="upcoming-video-container" style="padding: 1.25rem 1.8rem 0 1.8rem;">
+          <video controls style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px; background: #000; display: block; border: 1px solid var(--border-color);">
+            <source src="Burgess-video-1.mp4" type="video/mp4">
+            <source src="Burgess-video-1.MOV" type="video/quicktime">
+            <source src="Burgess-video-1.mov" type="video/quicktime">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="upcoming-body">
+          <div class="card-meta">Upcoming Fiction &bull; by Henry Burgess</div>
+          <h3 class="card-title">New Fiction Project</h3>
+          <p class="card-subtitle">Coming 2027</p>
+          <p class="card-isbn">Scheduled: 2027</p>
+          <p class="card-desc">
+            An immersive novel of resilience and destiny crafted under the pen name Henry Burgess, arriving in 2027.
+          </p>
+          <div style="margin-top: 1rem;">
+            <a href="#speaking" class="btn-outline" style="font-size: 0.88rem; padding: 0.65rem 1.25rem; width: 100%; text-align: center; justify-content: center; display: flex;">
+              Pre-Release Updates
+            </a>
+          </div>
+        </div>
+      </div>
 
-        function showToast(msg) {
-            const toast = document.getElementById('toast');
-            document.getElementById('toastMessage').innerText = msg;
-            toast.classList.remove('translate-y-24', 'opacity-0');
-            setTimeout(() => {
-                toast.classList.add('translate-y-24', 'opacity-0');
-            }, 3000);
-        }
+      <!-- Henry Burgess Book 2: Upcoming Project -->
+      <div class="upcoming-card">
+        <span class="upcoming-stamp">Coming 2027</span>
+        <div class="upcoming-cover-container">
+          <img src="Burgess-Book-2.jpg" alt="Henry Burgess Book 2" onerror="this.onerror=null; this.src='Burgess-Book-2.png'; if(!this.complete) { this.src='Burgess-Book-2'; }">
+        </div>
+        <div class="upcoming-video-container" style="padding: 1.25rem 1.8rem 0 1.8rem;">
+          <video controls style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px; background: #000; display: block; border: 1px solid var(--border-color);">
+            <source src="Burgess-video-2.mp4" type="video/mp4">
+            <source src="Burgess-video-2.MOV" type="video/quicktime">
+            <source src="Burgess-video-2.mov" type="video/quicktime">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="upcoming-body">
+          <div class="card-meta">Upcoming Fiction &bull; by Henry Burgess</div>
+          <h3 class="card-title">Forthcoming Fiction Work</h3>
+          <p class="card-subtitle">Coming 2027</p>
+          <p class="card-isbn">Scheduled: 2027</p>
+          <p class="card-desc">
+            An engaging new work of fiction currently in development under the pen name Henry Burgess, scheduled to arrive in 2027.
+          </p>
+          <div style="margin-top: 1rem;">
+            <a href="#speaking" class="btn-outline" style="font-size: 0.88rem; padding: 0.65rem 1.25rem; width: 100%; text-align: center; justify-content: center; display: flex;">
+              Pre-Release Updates
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        window.onload = function() {
-            const saved = localStorage.getItem('disney_3rd_shift_recap');
-            if (saved) {
-                try { appData = JSON.parse(saved); } catch(e) {}
-            }
-            renderApp();
-        };
-    </script>
+    <!-- VIDEO TRAILER & MEDIA GALLERY SECTION -->
+  <section id="videos" style="padding-top: 1rem;">
+    <div class="video-section">
+      <span class="section-tag">Cinematic Media</span>
+      <h2 class="section-title">Video Trailers & Spotlights</h2>
+      <p style="color: var(--text-muted); max-width: 650px; margin: 0.75rem auto 0;">
+        Watch the official promo videos for each of Henry L. Powell's published titles.
+      </p>
+
+      <div class="video-gallery-grid">
+        <!-- Video 1: Unformed Days -->
+        <div class="video-card">
+          <video controls poster="Unformed Days Front Cover.jpg">
+            <source src="Unformed Days_Promo 7.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="video-card-body">
+            <span class="video-card-tag">Official Teaser</span>
+            <h4 class="video-card-title">Unformed Days Promo</h4>
+            <p class="video-card-desc">A Story of Trauma, Truth, and Redemption. Experience the raw and triumphant journey of sovereign grace.</p>
+          </div>
+        </div>
+
+        <!-- Video 2: Still Reaching -->
+        <div class="video-card">
+          <video controls poster="Image Resize for Proper Dimensions.png">
+            <source src="StillReachingPromo.mp4" type="video/mp4">
+            <source src="StillReachingPromo.mov" type="video/quicktime">
+            Your browser does not support the video tag.
+          </video>
+          <div class="video-card-body">
+            <span class="video-card-tag">Survivor Roadmap</span>
+            <h4 class="video-card-title">Still Reaching Promo</h4>
+            <p class="video-card-desc">Surviving abuse, finding Christ, and healing the scars that remain. The dark rooms of trauma do not get the final word.</p>
+          </div>
+        </div>
+
+        <!-- Video 3: The Abiding Word -->
+        <div class="video-card">
+          <video controls poster="Words%20That%20Abide%20paperback%20cover%20rev.jpg">
+            <source src="The%20Abiding%20Word%20Promo%20Video.mp4" type="video/mp4">
+            <source src="The Abiding Word Promo Video.mp4" type="video/mp4">
+            <source src="The Abiding Word Promo Video.mov" type="video/quicktime">
+            Your browser does not support the video tag.
+          </video>
+          <div class="video-card-body">
+            <span class="video-card-tag">Sermons Brought to Life</span>
+            <h4 class="video-card-title">The Abiding Word Promo</h4>
+            <p class="video-card-desc">Biblical teachings transformed into gripping modern-day parables of enduring faith and rooted spiritual strength.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT THE AUTHOR -->
+  <section id="about">
+    <div class="about-container">
+      <div class="about-image-card">
+        <img src="author.jpg" alt="Henry L. Powell" onerror="this.onerror=null; this.src='author.jpeg'; if (!this.complete) { this.src='author.png'; }">
+      </div>
+      <div class="about-text">
+        <span class="section-tag">Meet the Author</span>
+        <h3>Henry L. Powell</h3>
+        <p class="lead">Minister, Author, and Storyteller</p>
+        <p>
+          Henry L. Powell writes from the intersection of painful human reality and triumphant divine grace. Having endured severe childhood hardships in Jacksonville, Florida, his life was altered through an encounter with Christ that propelled him into ministry, radio broadcasts, and teaching.
+        </p>
+        <p>
+          Through works like <em>Unformed Days</em>, <em>Still Reaching</em>, and <em>The Abiding Word</em>, Henry offers readers a transparent roadmap to spiritual resilience, showing that your scars are never your ruin—they are your testimony.
+        </p>
+        <div style="margin-top: 2rem;">
+          <a href="https://www.amazon.com/stores/author/B0HKQ8B48Q/about?ingress=0&visitId=9a74dc18-3c13-4e8f-b7e8-86989c944fde&ref_=aufs_ap_ahdr_dsk_aa" target="_blank" class="btn-primary" style="font-size: 0.95rem; padding: 0.75rem 1.5rem;">
+            Follow Author on Amazon
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT & SPEAKING INQUIRIES -->
+  <section id="speaking">
+    <div class="section-header">
+      <span class="section-tag">Connect</span>
+      <h2 class="section-title">Speaking & Ministry Inquiries</h2>
+    </div>
+
+    <div class="contact-container">
+      <form action="https://formspree.io/f/moeeevwj" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required placeholder="Pastor / Minister / Reader Name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required placeholder="youremail@example.com">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="organization">Church or Organization</label>
+            <input type="text" id="organization" name="organization" placeholder="Church / Ministry Name">
+          </div>
+          <div class="form-group">
+            <label for="interest">Inquiry Type</label>
+            <select id="interest" name="interest">
+              <option value="speaking">Guest Preaching / Speaking Event</option>
+              <option value="burgess">Advance Reader for Henry Burgess Fiction</option>
+              <option value="bookclub">Book Club / Group Study</option>
+              <option value="interview">Media / Podcast Interview</option>
+              <option value="bulk">Bulk Book Orders</option>
+              <option value="general">Personal Message to Henry</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required placeholder="Tell Henry about your event, date, or message..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; border: none; cursor: pointer;">
+          Send Message
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 Henry L. Powell. All Rights Reserved.</p>
+    <p>Available on Amazon in Paperback and Kindle Editions.</p>
+
+  </footer>
+
+  <!-- EXCERPT MODAL -->
+  <div class="modal-overlay" id="sampleModal" onclick="closeSample(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeSampleModal()">&times;</button>
+      <h3 class="modal-book-title" id="modalTitle">Book Title</h3>
+      <p class="modal-book-sub" id="modalSubtitle">Subtitle</p>
+      <div class="modal-text" id="modalText">Sample excerpt text goes here...</div>
+      <a href="#" target="_blank" class="btn-primary" id="modalAmazonBtn" style="display: inline-flex;">
+        Order This Book on Amazon
+      </a>
+    </div>
+  </div>
+
+  <script>
+    const samples = {
+      unformed: {
+        title: "Unformed Days",
+        subtitle: "A Story of Trauma, Truth, and Redemption",
+        amazonUrl: "https://www.amazon.com/dp/9798174253780",
+        text: `“Your eyes saw my unformed body; all the days ordained for me were written in your book before one of them came to be.” — Psalm 139:16
+
+Before the pulpit, before the radio broadcasts, and before the peace, were life's unformed days. Growing up in Jacksonville, Florida, Powell was caught in a whirlwind of severe childhood turmoil, tragic loss, and hidden disease.
+
+After the passing of his beloved mother, he and his siblings were thrust into a house on West 2nd Street — a condemned home built on red brick pillars, where fear was a daily constant.
+
+Yet, through every wilderness, God’s hand quietly shielded him. From martial arts training in empty neighborhood lots to a miraculous courtroom encounter, a life-altering conversion at a bus stop, and a divine call into ministry, Henry's journey is a powerful testament to sovereign grace.
+
+UNFORMED DAYS is a raw, triumphant memoir of survival,faith, and the unyielding pursuit of truth. God's timing will always bring every hidden thing into His marvelous light.`
+      },
+      reaching: {
+        title: "Still Reaching",
+        subtitle: "Surviving Abuse, Finding Christ, and Healing the Scars That Remain",
+        amazonUrl: "https://www.amazon.com/dp/9798160431284",
+        text: `THE DARK ROOMS OF TRAUMA DO NOT GET THE FINAL WORD.
+
+If you have survived emotional, physical, verbal, or sexual abuse, you know the exhausting weight of the long, winding road. You know what it's like to carry shame that never belonged to you, to fight through internal confusion, and to wonder if God even hears your voice over the noise of the past.
+
+You aren't looking for cheap platitudes or religious clichés. You are looking for a way out of the graveyard.
+
+In STILL REACHING, Henry Powell shares a deeply personal roadmap for healing — not as an expert looking down from above, but as a fellow traveler who has walked through the fire. Weaving raw honesty with timeless biblical truths — from the quiet cry of a child in the dark to the breathtaking restoration of the man among the tombs — this book is an invitation to lay down your armor, strip away toxic shame, and step back into the light.
+
+YOUR SCARS ARE NOT YOUR RUIN. THEY ARE YOUR TESTIMONY.`
+      },
+      abiding: {
+        title: "The Abiding Word",
+        subtitle: "Sermons Brought to Life",
+        amazonUrl: "https://a.co/d/08R94uEK",
+        text: `“Is your faith built to withstand the storm, or is it resting on sinking sand?”
+
+When Jesus wanted to communicate the most earth-shattering truths of the Kingdom of Heaven, He didn’t rely on fertile theologized lectures. He pointed to the fields, the vineyards, and the ordinary people walking the dusty roads of Judea. He told stories.
+
+In THE ABIDING WORD, Henry Powell transforms profound biblical teachings into gripping, modern-day parables. Through the lives of everyday men and women, you will witness the rare reality of the Christian faith community within you — encountering the Good Samaritan on a midnight shift or a weary executive confronting the true cost of discipleship.
+
+This collection will challenge your compromises, comfort your deepest griefs, and disinflate your fears. Step into these pages and discover what it truly means to let the living Word of God take root, grow, and abide in your life.`
+      }
+    };
+
+    function openSample(key) {
+      const data = samples[key];
+      if (!data) return;
+      document.getElementById('modalTitle').innerText = data.title;
+      document.getElementById('modalSubtitle').innerText = data.subtitle;
+      document.getElementById('modalText').innerText = data.text;
+      const amazonBtn = document.getElementById('modalAmazonBtn');
+      if (amazonBtn) {
+        amazonBtn.href = data.amazonUrl;
+      }
+      document.getElementById('sampleModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeSampleModal() {
+      document.getElementById('sampleModal').classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    function closeSample(event) {
+      if (event.target.id === 'sampleModal') {
+        closeSampleModal();
+      }
+    }
+
+    // Form submission handled securely by Formspree
+  </script>
 </body>
 </html>
